@@ -1,3 +1,31 @@
+ {
+	"plugins": [
+		"react",
+		"import"
+	],
+	"extends": [
+		"airbnb-base",
+		"plugin:react/recommended"
+	],
+	 "env": {
+		 "es6": true
+	 },
+	 "rules": {
+		 "quotes": 0,
+		 "no-mixed-spaces-and-tabs": 0
+	 }
+ }
+
+/*
 {
-	"extends": "airbnb/base"
-}
+	"plugins": [
+		"react"
+	],
+	"extends": [
+		"airbnb-base",
+		"plugin:react/recommended"
+	],
+	"rules": {
+		"no-set-state": "off"
+	}
+}*/
