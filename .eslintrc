@@ -8,9 +8,6 @@
 	"plugins": [
 		"react"
 	],
-	"ecmaFeatures": {
-		"jsx": true
-	},
 	"rules": {
 		"no-unused-vars": 1,
 		"no-debugger": 0,

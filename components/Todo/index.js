@@ -1,15 +1,14 @@
 import React from 'react';
 import './index.css';
-import Checkbox from '../Checkbox/index';
+import Checkbox from '../Checkbox';
+import Button from '../Button';
 
 function Todo({ dataTodo }) {
 	return (
-		<div className='todo'>
+		<div className={`todo${dataTodo.completed ? ' completed' : ' '}`}>
 			<Checkbox checked = { dataTodo.completed } />
 			<div className = 'todo-title'> { dataTodo.title } </div>
-			<button className='delete icon'>
-				<i className='material-icons'>delete</i>
-			</button>
+			<Button className = 'delete button' icon='delete'/>
 		</div>
 	);
 }

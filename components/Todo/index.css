@@ -2,3 +2,7 @@
 	display: flex;
 	align-items: center;
 }
+
+.todo.completed{
+	opacity: 0.5;
+}
