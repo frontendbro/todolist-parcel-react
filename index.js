@@ -9,6 +9,10 @@ import Header from './components/Header';
 class App extends React.Component {
 	constructor(props) {
 		super(props);
+
+		this.state = {
+			todos: this.props.data
+		}
 	}
 
 	render() {
@@ -18,8 +22,8 @@ class App extends React.Component {
 				<div className='wrapper'>
 					<Header />
 					<section className='todo-list'>
-						{this.props.data.map(todo => (
-							<Todo dataTodo={todo} key={todo.id}/>
+						{this.state.todos.map(todo => (
+							<Todo key={todo.id} title={todo.title} completed={todo.completed}/>
 						))}
 					</section>
 				</div>

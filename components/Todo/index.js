@@ -3,11 +3,11 @@ import './index.css';
 import Checkbox from '../Checkbox';
 import Button from '../Button';
 
-function Todo({ dataTodo }) {
+function Todo({ title, completed }) {
 	return (
-		<div className={`todo${dataTodo.completed ? ' completed' : ' '}`}>
-			<Checkbox checked = { dataTodo.completed } />
-			<div className = 'todo-title'> { dataTodo.title } </div>
+		<div className={`todo${ completed ? ' completed' : ' '}`}>
+			<Checkbox checked = { completed } />
+			<div className = 'todo-title'> { title } </div>
 			<Button className = 'delete button' icon='delete'/>
 		</div>
 	);
