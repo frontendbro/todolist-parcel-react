@@ -35,7 +35,7 @@ class App extends React.Component {
 				<div className='App'>
 					<img className='App-Logo' src={logo} alt='React Logo'/>
 					<div className='wrapper'>
-						<Header/>
+						<Header todos={this.state.todos}/>
 						<section className='todo-list'>
 							{this.state.todos.map(todo => (
 									<Todo

@@ -1,9 +1,12 @@
 import React from 'react';
 import './index.css';
 
-function Header() {
+import Stats from '../Stats/';
+
+function Header({todos}) {
 	return(
 		<header className='todoHeader'>
+			<Stats todos={todos}/>
 			<h1>ToDoList Parcel React</h1>
 		</header>
 	)
