@@ -19,6 +19,6 @@ const data = [
 		title: 'Изучить Node.js',
 		completed: false
 	}
-]
+];
 
 export default data;
