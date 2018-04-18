@@ -29,7 +29,7 @@ class Form extends React.Component {
 	render() {
 		return (
 			<form className='todo-form' onSubmit={this.handleSubmit}>
-				<input type='text' value={this.state.value} placeholder='Что нужно сделать?' onChange={this.handleChange}/>
+				<input type='text' value={this.state.title} placeholder='Что нужно сделать?' onChange={this.handleChange}/>
 				<Button type='submit'>Добавить</Button>
 			</form>
 		)

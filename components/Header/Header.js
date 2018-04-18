@@ -1,7 +1,7 @@
 import React from 'react';
 import './index.css';
 
-import Stats from '../Stats/';
+import Stats from '../Stats/Stats';
 
 function Header({todos}) {
 	return(
