@@ -3,9 +3,9 @@ import ReactDOM from 'react-dom';
 import logo from './logo.svg';
 import './index.css';
 import data from './data';
-import Todo from './components/Todo';
-import Header from './components/Header';
-import Form from './components/Form';
+import Todo from './components/Todo/Todo';
+import Header from './components/Header/Header';
+import Form from './components/Form/Form';
 
 class App extends React.Component {
 	constructor(props) {

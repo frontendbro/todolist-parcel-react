@@ -1,7 +1,7 @@
 import React from 'react';
 import './index.css';
-import Checkbox from '../Checkbox';
-import Button from '../Button';
+import Checkbox from '../Checkbox/Checkbox';
+import Button from '../Button/Button';
 
 function Todo({id, title, completed, onStatusChange, onDelete}) {
 	return (
