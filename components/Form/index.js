@@ -8,18 +8,21 @@ class Form extends React.Component {
 		super(props);
 
 		this.state = {};
-
 	}
 
 	handleSubmit = (event) => {
 		event.preventDefault();
-		console.log(event);
-	}
+		let title = this.refs.title.value;
+		if (title) {
+			this.props.onAdd(title);
+			this.refs.title.value = '';
+		}
+	};
 
 	render() {
 		return (
 			<form className='todo-form' onSubmit={this.handleSubmit}>
-				<input type='text' placeholder='Что нужно сделать?'/>
+				<input type='text' ref='title' placeholder='Что нужно сделать?'/>
 				<Button type='submit'>Добавить</Button>
 			</form>
 		)

@@ -16,6 +16,11 @@ class App extends React.Component {
 		}
 	}
 
+	nextId = () => {
+		this._nextId = this._nextId || 5;
+		return this._nextId++;
+	};
+
 	handleStatusChange = (id) => {
 		let todos = this.state.todos.map(todo => {
 			if (todo.id === id) {
@@ -26,6 +31,17 @@ class App extends React.Component {
 		this.setState({todos});
 	};
 
+	handleAdd = (title) => {
+		let todo = {
+			id: this.nextId(),
+			title,
+			completed: false
+		};
+
+		let todos = [...this.state.todos, todo];
+		this.setState({todos});
+	};
+
 	handleDelete = (id) => {
 		let todos = this.state.todos.filter(todo => todo.id !== id);
 		this.setState({todos});
@@ -33,25 +49,25 @@ class App extends React.Component {
 
 	render() {
 		return (
-				<div className='App'>
-					<img className='App-Logo' src={logo} alt='React Logo'/>
-					<div className='wrapper'>
-						<Header todos={this.state.todos}/>
-						<section className='todo-list'>
-							{this.state.todos.map(todo => (
-									<Todo
-											key={todo.id}
-											id={todo.id}
-											title={todo.title}
-											completed={todo.completed}
-											onStatusChange={this.handleStatusChange}
-											onDelete={this.handleDelete}
-									/>
-							))}
-						</section>
-						<Form />
-					</div>
+			<div className='App'>
+				<img className='App-Logo' src={logo} alt='React Logo'/>
+				<div className='wrapper'>
+					<Header todos={this.state.todos}/>
+					<section className='todo-list'>
+						{this.state.todos.map(todo => (
+							<Todo
+								key={todo.id}
+								id={todo.id}
+								title={todo.title}
+								completed={todo.completed}
+								onStatusChange={this.handleStatusChange}
+								onDelete={this.handleDelete}
+							/>
+						))}
+					</section>
+					<Form onAdd={this.handleAdd}/>
 				</div>
+			</div>
 		);
 	}
 }
