@@ -47,6 +47,18 @@ class App extends React.Component {
 		this.setState({todos});
 	};
 
+	handleEdit = (id, title) => {
+		let todos = this.state.todos.map(todo => {
+			if (todo.id === id) {
+				todo.title = title;
+			}
+
+			return todo;
+		});
+
+		this.setState({todos});
+	};
+
 	render() {
 		return (
 			<div className='App'>
@@ -62,6 +74,7 @@ class App extends React.Component {
 								completed={todo.completed}
 								onStatusChange={this.handleStatusChange}
 								onDelete={this.handleDelete}
+								onEdit={this.handleEdit}
 							/>
 						))}
 					</section>
