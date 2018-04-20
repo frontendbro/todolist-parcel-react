@@ -12,6 +12,12 @@ class Todo extends React.Component {
 		};
 	}
 
+	componentDidUpdate = () => {
+		if ( this.state.editing) {
+			this.refs.title.select();
+		}
+	}
+
 	handleSubmit = (event) => {
 		event.preventDefault();
 		let title = this.refs.title.value;
